@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
     <script>
         tailwind.config = {
             theme: {
@@ -32,30 +33,30 @@
             }
         }
     </script>
+    
     <style>
         body {
-            background-color: #05070c;
-            background-image: 
-                radial-gradient(at 10% 10%, rgba(0, 242, 254, 0.08) 0px, transparent 40%),
-                radial-gradient(at 90% 80%, rgba(121, 40, 202, 0.08) 0px, transparent 40%);
-            background-attachment: fixed;
+            background-color: #05070c !important;
+            color: #e2e8f0 !important;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            min-height: 100vh;
         }
         .glass-panel {
-            background: rgba(13, 17, 26, 0.75);
+            background: rgba(13, 17, 26, 0.85);
             backdrop-filter: blur(12px);
             border: 1px solid rgba(27, 34, 52, 0.8);
         }
     </style>
 </head>
-<body class="text-gray-200 font-sans min-h-screen flex flex-col antialiased">
+<body class="bg-[#05070c] text-gray-200 font-sans min-h-screen flex flex-col antialiased">
 
     <!-- Header Navigation -->
-    <header class="sticky top-0 z-50 backdrop-blur-xl bg-[#05070c]/80 border-b border-cyber-border">
+    <header class="sticky top-0 z-50 backdrop-blur-xl bg-[#05070c]/90 border-b border-[#1b2234]">
         <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
             <div class="flex items-center space-x-3">
                 <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-400 to-purple-600 p-[1px]">
-                    <div class="w-full h-full bg-cyber-bg rounded-[11px] flex items-center justify-center">
-                        <span class="font-heading font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500 text-xl">C</span>
+                    <div class="w-full h-full bg-[#05070c] rounded-[11px] flex items-center justify-center">
+                        <span class="font-heading font-extrabold text-cyan-400 text-xl">C</span>
                     </div>
                 </div>
                 <div>
@@ -80,5 +81,92 @@
     </header>
 
     <!-- Hero Banner Section -->
-    <section class="py-12 px-4 relative overflow-hidden">
-        <div class="max-w-4xl mx-auto text-center space-y-4">
+    <section class="py-10 px-4 relative overflow-hidden text-center">
+        <div class="max-w-4xl mx-auto space-y-4">
+            <div class="inline-flex items-center gap-2 bg-[#0d111a] border border-[#1b2234] px-3 py-1.5 rounded-full text-xs font-mono text-cyan-400">
+                <i class="fa-solid fa-microchip"></i> Modern Cyber Hub Platform
+            </div>
+            <h1 class="font-heading text-3xl md:text-5xl font-extrabold text-white tracking-tight">
+                CLP Hub <br/>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-400 to-purple-500">Cloud Phone & Script Hub</span>
+            </h1>
+            <p class="text-gray-400 text-sm md:text-base max-w-xl mx-auto font-normal leading-relaxed">
+                Kho tổng hợp Script Chilli Hub, tiện ích Anti-AFK, Fix Lag cho máy Cloud Phone và Executor APK uy tín.
+            </p>
+
+            <!-- Search Bar -->
+            <div class="pt-2 max-w-md mx-auto">
+                <div class="relative">
+                    <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 text-sm"></i>
+                    <input type="text" id="searchInput" onkeyup="searchContent()" placeholder="Tìm kiếm script, apk, tool..." 
+                           class="w-full bg-[#0d111a] border border-[#1b2234] focus:border-cyan-500/50 rounded-xl pl-11 pr-4 py-2.5 text-sm text-white placeholder-gray-500 focus:outline-none transition-all">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto px-4 py-6 flex-grow space-y-12 w-full">
+
+        <!-- 1. THANH LỐI TẮT NHANH (QUICK TOOLS) -->
+        <section id="quick-tools" class="scroll-mt-20">
+            <h2 class="font-heading text-lg font-bold text-white mb-4 flex items-center gap-2">
+                <i class="fa-solid fa-bolt text-cyan-400"></i> Thanh Lối Tắt Nhanh (Quick Tools)
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                
+                <!-- Tool 1: izen.lol -->
+                <div class="glass-panel rounded-2xl p-5 border-l-4 border-l-purple-500 flex items-center justify-between gap-4">
+                    <div class="space-y-1">
+                        <div class="flex items-center gap-2 text-xs font-mono font-bold text-purple-400 uppercase">
+                            <i class="fa-solid fa-key"></i> Bypass Key Link
+                        </div>
+                        <h3 class="font-heading font-bold text-white text-base">izen.lol</h3>
+                        <p class="text-xs text-gray-400">Công cụ hỗ trợ bypass link rút gọn lấy Key tự động.</p>
+                    </div>
+                    <a href="https://izen.lol" target="_blank" 
+                       class="shrink-0 bg-gradient-to-r from-purple-600 to-cyan-500 hover:opacity-90 text-white font-bold text-xs py-2.5 px-4 rounded-xl transition-all flex items-center gap-2">
+                        <span>Bypass Ngay</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- Tool 2: meows.com -->
+                <div class="glass-panel rounded-2xl p-5 border-l-4 border-l-cyan-400 flex items-center justify-between gap-4">
+                    <div class="space-y-1">
+                        <div class="flex items-center gap-2 text-xs font-mono font-bold text-cyan-400 uppercase">
+                            <i class="fa-solid fa-cloud"></i> Đăng Ký Cloud Phone
+                        </div>
+                        <h3 class="font-heading font-bold text-white text-base">meows.com</h3>
+                        <p class="text-xs text-gray-400">Trang chủ hỗ trợ tạo tài khoản và reg máy Cloud Phone.</p>
+                    </div>
+                    <a href="https://meows.com" target="_blank" 
+                       class="shrink-0 bg-cyan-500 hover:bg-cyan-400 text-black font-bold text-xs py-2.5 px-4 rounded-xl transition-all flex items-center gap-2">
+                        <span>Đăng Ký Máy</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 2. MỤC SCRIPT TEST & TIỆN ÍCH ROBLOX -->
+        <section id="scripts" class="scroll-mt-20 space-y-4">
+            <h2 class="font-heading text-lg font-bold text-white flex items-center gap-2">
+                <i class="fa-solid fa-code text-cyan-400"></i> Script Test & Tiện Ích Roblox
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+
+                <!-- Script 1: Chilli Hub Main -->
+                <div class="card-item glass-panel rounded-xl p-5 flex flex-col justify-between group">
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">Chilli Hub</span>
+                            <span class="text-[10px] text-gray-500">Official</span>
+                        </div>
+                        <h3 class="font-heading font-bold text-white">Chilli Hub (Bản Chuẩn)</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed">Đoạn script Chilli Hub bản chuẩn đầy đủ tính năng test game.</p>
+                        <div class="bg-[#05070c] border border-[#1b2234] rounded-lg p-2.5 font-mono text-[11px] text-gray-400 break-all max-h-20 overflow-y-auto">
+                            loadstring(game:HttpGet("
