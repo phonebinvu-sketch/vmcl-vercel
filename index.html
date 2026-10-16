@@ -3,28 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VMCL - Roblox Studio Scripts & Executor Files</title>
+    <title>CLP - Cloud Phone & Roblox Script Hub</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
                         sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        heading: ['Space Grotesk', 'sans-serif'],
                         mono: ['JetBrains Mono', 'monospace'],
                     },
                     colors: {
-                        brand: {
-                            500: '#f59e0b',
-                            600: '#d97706',
-                            dark: '#0d0f12',
-                            card: '#161920',
-                            border: '#232733'
+                        cyber: {
+                            bg: '#05070c',
+                            card: '#0d111a',
+                            border: '#1b2234',
+                            accent: '#00f2fe',
+                            purple: '#7928ca'
                         }
                     }
                 }
@@ -33,270 +34,51 @@
     </script>
     <style>
         body {
-            background-color: #0b0c10;
+            background-color: #05070c;
             background-image: 
-                radial-gradient(at 0% 0%, rgba(245, 158, 11, 0.08) 0px, transparent 50%),
-                radial-gradient(at 100% 100%, rgba(217, 119, 6, 0.05) 0px, transparent 50%);
+                radial-gradient(at 10% 10%, rgba(0, 242, 254, 0.08) 0px, transparent 40%),
+                radial-gradient(at 90% 80%, rgba(121, 40, 202, 0.08) 0px, transparent 40%);
             background-attachment: fixed;
         }
-        .bg-grid {
-            background-size: 30px 30px;
-            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-                              linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+        .glass-panel {
+            background: rgba(13, 17, 26, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(27, 34, 52, 0.8);
         }
     </style>
 </head>
-<body class="text-gray-200 font-sans min-h-screen flex flex-col bg-grid antialiased">
+<body class="text-gray-200 font-sans min-h-screen flex flex-col antialiased">
 
     <!-- Header Navigation -->
-    <header class="sticky top-0 z-50 backdrop-blur-md bg-[#0b0c10]/80 border-b border-brand-border">
+    <header class="sticky top-0 z-50 backdrop-blur-xl bg-[#05070c]/80 border-b border-cyber-border">
         <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
             <div class="flex items-center space-x-3">
-                <div class="w-10 h-10 bg-amber-500 rounded-lg flex items-center justify-center text-black font-extrabold text-xl shadow-lg shadow-amber-500/20">
-                    V
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-400 to-purple-600 p-[1px]">
+                    <div class="w-full h-full bg-cyber-bg rounded-[11px] flex items-center justify-center">
+                        <span class="font-heading font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500 text-xl">C</span>
+                    </div>
                 </div>
                 <div>
-                    <span class="text-xl font-bold tracking-tight text-white block leading-none">VMCL</span>
-                    <span class="text-[10px] text-amber-500 font-semibold tracking-wider">ROBLOX STUDIO</span>
+                    <span class="font-heading font-bold text-xl tracking-wider text-white block leading-none">CLP<span class="text-cyan-400">.</span></span>
+                    <span class="text-[9px] text-gray-400 tracking-widest font-mono uppercase">Cloud Phone & Script Hub</span>
                 </div>
             </div>
 
             <nav class="hidden md:flex items-center space-x-6 text-sm font-medium">
-                <a href="#scripts" class="text-gray-300 hover:text-amber-500 transition-colors">Script Test</a>
-                <a href="#files" class="text-gray-300 hover:text-amber-500 transition-colors">File & APK</a>
-                <a href="https://discord.gg" target="_blank" class="text-gray-300 hover:text-amber-500 transition-colors flex items-center gap-1.5">
-                    <i class="fa-brands fa-discord"></i> Discord
-                </a>
+                <a href="#quick-tools" class="text-gray-300 hover:text-cyan-400 transition-colors">Lối Tắt Tool</a>
+                <a href="#scripts" class="text-gray-300 hover:text-cyan-400 transition-colors">Roblox Scripts</a>
+                <a href="#files" class="text-gray-300 hover:text-cyan-400 transition-colors">APK Executor</a>
             </nav>
 
             <div class="flex items-center space-x-3">
-                <span class="text-xs bg-amber-500/10 text-amber-400 border border-amber-500/20 px-2.5 py-1 rounded-full font-medium">
-                    <i class="fa-solid fa-bolt mr-1"></i> Vercel Ready
+                <span class="text-[11px] font-mono bg-cyan-950/60 text-cyan-400 border border-cyan-500/30 px-3 py-1 rounded-full flex items-center gap-1.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-ping"></span>
+                    VERCEL READY
                 </span>
             </div>
         </div>
     </header>
 
     <!-- Hero Banner Section -->
-    <section class="py-12 px-4 border-b border-brand-border/50">
-        <div class="max-w-6xl mx-auto text-center py-6">
-            <div class="inline-flex items-center gap-2 bg-brand-card border border-brand-border px-3 py-1.5 rounded-full text-xs font-medium text-amber-400 mb-4">
-                <span class="flex h-2 w-2 rounded-full bg-amber-400 animate-ping"></span>
-                Trang Chia Sẻ Script & File APK Uy Tín
-            </div>
-            <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-4 tracking-tight">
-                VMCL Roblox Studio Hub
-            </h1>
-            <p class="text-gray-400 max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
-                Tổng hợp các đoạn Script Roblox Studio, Chilli Hub Tiếng Việt và các bản APK Executor tối ưu nhất cho người dùng.
-            </p>
-        </div>
-    </section>
-
-    <main class="max-w-6xl mx-auto px-4 py-10 flex-grow space-y-14">
-
-        <!-- SECTION 1: ROBLOX SCRIPTS -->
-        <section id="scripts" class="scroll-mt-20">
-            <div class="flex items-center justify-between mb-6">
-                <div>
-                    <h2 class="text-xl font-bold text-white flex items-center gap-2">
-                        <i class="fa-solid fa-code text-amber-500"></i> Script Test Studio
-                    </h2>
-                    <p class="text-xs text-gray-400 mt-1">Sao chép nhanh bằng 1 click để dán vào Roblox Studio / Executor</p>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-
-                <!-- Script Item 1 -->
-                <div class="bg-brand-card border border-brand-border rounded-xl p-5 hover:border-amber-500/40 transition-all flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-xs font-semibold px-2.5 py-1 rounded-md bg-amber-500/10 text-amber-400 border border-amber-500/20">
-                                Chilli Hub
-                            </span>
-                            <span class="text-xs text-gray-500">Bản Chuẩn</span>
-                        </div>
-                        <h3 class="text-base font-bold text-white mb-2">Chilli Hub (Main)</h3>
-                        <p class="text-xs text-gray-400 mb-4 leading-relaxed">
-                            Đoạn script Chilli Hub phiên bản chính thức, tối ưu cho các tính năng test trong game.
-                        </p>
-                        <div class="bg-[#0b0c10] border border-brand-border rounded-lg p-2.5 font-mono text-[11px] text-gray-300 break-all mb-4 max-h-20 overflow-y-auto">
-                            loadstring(game:HttpGet("https://raw.githubusercontent.com/kadit9999/stealanegg/refs/heads/main/chilly.lua"))()
-                        </div>
-                    </div>
-                    <button onclick="copyScript('loadstring(game:HttpGet(\"https://raw.githubusercontent.com/kadit9999/stealanegg/refs/heads/main/chilly.lua\"))()', this)" 
-                            class="w-full bg-amber-500 hover:bg-amber-600 text-black font-semibold text-xs py-2.5 px-4 rounded-lg transition-colors flex items-center justify-center gap-2">
-                        <i class="fa-regular fa-copy"></i>
-                        <span>Sao Chép Script</span>
-                    </button>
-                </div>
-
-                <!-- Script Item 2 -->
-                <div class="bg-brand-card border border-brand-border rounded-xl p-5 hover:border-amber-500/40 transition-all flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-xs font-semibold px-2.5 py-1 rounded-md bg-amber-500/10 text-amber-400 border border-amber-500/20">
-                                Mod Tiếng Việt
-                            </span>
-                            <span class="text-xs text-gray-500">Việt Hóa</span>
-                        </div>
-                        <h3 class="text-base font-bold text-white mb-2">Chilli Hub (Tiếng Việt)</h3>
-                        <p class="text-xs text-gray-400 mb-4 leading-relaxed">
-                            Bản Mod giao diện và tính năng Tiếng Việt dễ dàng thao tác cho người dùng Việt Nam.
-                        </p>
-                        <div class="bg-[#0b0c10] border border-brand-border rounded-lg p-2.5 font-mono text-[11px] text-gray-300 break-all mb-4 max-h-20 overflow-y-auto">
-                            loadstring(game:HttpGet("https://raw.githubusercontent.com/ronnei/hihi/refs/heads/main/chillihubnew.lua"))()
-                        </div>
-                    </div>
-                    <button onclick="copyScript('loadstring(game:HttpGet(\"https://raw.githubusercontent.com/ronnei/hihi/refs/heads/main/chillihubnew.lua\"))()', this)" 
-                            class="w-full bg-amber-500 hover:bg-amber-600 text-black font-semibold text-xs py-2.5 px-4 rounded-lg transition-colors flex items-center justify-center gap-2">
-                        <i class="fa-regular fa-copy"></i>
-                        <span>Sao Chép Script</span>
-                    </button>
-                </div>
-
-                <!-- Script Item 3 -->
-                <div class="bg-brand-card border border-brand-border rounded-xl p-5 hover:border-amber-500/40 transition-all flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-xs font-semibold px-2.5 py-1 rounded-md bg-amber-500/10 text-amber-400 border border-amber-500/20">
-                                Chilli V4
-                            </span>
-                            <span class="text-xs text-gray-500">Bản Mới Nhất</span>
-                        </div>
-                        <h3 class="text-base font-bold text-white mb-2">Chilli Hub V4 Tiếng Việt</h3>
-                        <p class="text-xs text-gray-400 mb-4 leading-relaxed">
-                            Phiên bản V4 cập nhật giao diện mới, bổ sung menu Tiếng Việt mượt mà.
-                        </p>
-                        <div class="bg-[#0b0c10] border border-brand-border rounded-lg p-2.5 font-mono text-[11px] text-gray-300 break-all mb-4 max-h-20 overflow-y-auto">
-                            loadstring(game:HttpGet("https://raw.githubusercontent.com/kadit9999/stealanegg/refs/heads/main/chillimodrubu.lua"))()
-                        </div>
-                    </div>
-                    <button onclick="copyScript('loadstring(game:HttpGet(\"https://raw.githubusercontent.com/kadit9999/stealanegg/refs/heads/main/chillimodrubu.lua\"))()', this)" 
-                            class="w-full bg-amber-500 hover:bg-amber-600 text-black font-semibold text-xs py-2.5 px-4 rounded-lg transition-colors flex items-center justify-center gap-2">
-                        <i class="fa-regular fa-copy"></i>
-                        <span>Sao Chép Script</span>
-                    </button>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- SECTION 2: FILES & APK DOWNLOAD -->
-        <section id="files" class="scroll-mt-20">
-            <div class="flex items-center justify-between mb-6">
-                <div>
-                    <h2 class="text-xl font-bold text-white flex items-center gap-2">
-                        <i class="fa-solid fa-file-arrow-down text-amber-500"></i> File & APK Tải Về
-                    </h2>
-                    <p class="text-xs text-gray-400 mt-1">Các bản APK Executor / File Roblox Studio cập nhật mới nhất</p>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-                <!-- File APK Item 1 -->
-                <div class="bg-brand-card border border-brand-border rounded-xl p-5 flex items-start justify-between gap-4">
-                    <div class="flex gap-4">
-                        <div class="w-12 h-12 bg-amber-500/10 border border-amber-500/20 rounded-xl flex items-center justify-center text-amber-400 shrink-0 text-xl">
-                            <i class="fa-brands fa-android"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-base font-bold text-white">Roblox Executor Client APK</h3>
-                            <p class="text-xs text-gray-400 mt-1">Ứng dụng hỗ trợ chạy Script trên điện thoại Android.</p>
-                            <div class="flex items-center gap-3 mt-3 text-[11px] text-gray-500">
-                                <span><i class="fa-solid fa-hard-drive mr-1"></i> ~120 MB</span>
-                                <span><i class="fa-solid fa-code-branch mr-1"></i> v2.600</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Thay link bên dưới thành link Drive/MediaFire APK của bạn -->
-                    <a href="https://www.mediafire.com" target="_blank" 
-                       class="shrink-0 bg-brand-border hover:bg-amber-500 hover:text-black text-white text-xs font-semibold py-2 px-3.5 rounded-lg transition-colors flex items-center gap-1.5 self-center">
-                        <i class="fa-solid fa-download"></i>
-                        <span>Tải APK</span>
-                    </a>
-                </div>
-
-                <!-- File Studio Item 2 -->
-                <div class="bg-brand-card border border-brand-border rounded-xl p-5 flex items-start justify-between gap-4">
-                    <div class="flex gap-4">
-                        <div class="w-12 h-12 bg-amber-500/10 border border-amber-500/20 rounded-xl flex items-center justify-center text-amber-400 shrink-0 text-xl">
-                            <i class="fa-solid fa-cube"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-base font-bold text-white">VMCL Test Baseplace (.rbxl)</h3>
-                            <p class="text-xs text-gray-400 mt-1">Map mẫu khởi tạo sẵn dùng để test script trong Roblox Studio.</p>
-                            <div class="flex items-center gap-3 mt-3 text-[11px] text-gray-500">
-                                <span><i class="fa-solid fa-hard-drive mr-1"></i> 2.4 MB</span>
-                                <span><i class="fa-solid fa-file mr-1"></i> RBXL File</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Thay link bên dưới thành link tải file Studio của bạn -->
-                    <a href="https://drive.google.com/file/d/1j_KVcKqoN52s4jz76kngWzZ_b5AxRzhe/view?usp=sharing" target="_blank" class="shrink-0 bg-brand-border hover:bg-amber-500 hover:text-black text-white text-xs font-semibold py-2 px-3.5 rounded-lg transition-colors flex items-center gap-1.5 self-center">
-    <i class="fa-solid fa-download"></i>
-    <span>Tải APK Delta X</span>
-</a> 
-                       class="shrink-0 bg-brand-border hover:bg-amber-500 hover:text-black text-white text-xs font-semibold py-2 px-3.5 rounded-lg transition-colors flex items-center gap-1.5 self-center">
-                        <i class="fa-solid fa-download"></i>
-                        <span>Tải File</span>
-                    </a>
-                </div>
-
-            </div>
-        </section>
-
-    </main>
-
-    <!-- Footer -->
-    <footer class="border-t border-brand-border py-6 bg-[#0b0c10]/80">
-        <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between text-xs text-gray-500 gap-4">
-            <p>© 2026 VMCL Roblox Studio. Hosted on Vercel.</p>
-            <div class="flex space-x-4">
-                <a href="#scripts" class="hover:text-gray-300">Script Test</a>
-                <a href="#files" class="hover:text-gray-300">File APK</a>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Toast Notification -->
-    <div id="toast" class="fixed bottom-5 right-5 bg-amber-500 text-black text-xs font-bold px-4 py-3 rounded-lg shadow-xl translate-y-20 opacity-0 transition-all duration-300 flex items-center gap-2">
-        <i class="fa-solid fa-circle-check"></i>
-        <span>Đã sao chép Script vào khay nhớ tạm!</span>
-    </div>
-
-    <!-- JavaScript Functions -->
-    <script>
-        function copyScript(code, buttonEl) {
-            navigator.clipboard.writeText(code).then(() => {
-                showToast();
-                
-                // Temporary change button text
-                const originalHTML = buttonEl.innerHTML;
-                buttonEl.innerHTML = '<i class="fa-solid fa-check"></i><span>Đã Chép!</span>';
-                buttonEl.classList.remove('bg-amber-500', 'hover:bg-amber-600');
-                buttonEl.classList.add('bg-green-500', 'text-white');
-
-                setTimeout(() => {
-                    buttonEl.innerHTML = originalHTML;
-                    buttonEl.classList.remove('bg-green-500', 'text-white');
-                    buttonEl.classList.add('bg-amber-500', 'hover:bg-amber-600');
-                }, 2000);
-            }).catch(err => {
-                console.error("Lỗi khi copy: ", err);
-            });
-        }
-
-        function showToast() {
-            const toast = document.getElementById('toast');
-            toast.classList.remove('translate-y-20', 'opacity-0');
-            
-            setTimeout(() => {
-                toast.classList.add('translate-y-20', 'opacity-0');
-            }, 2500);
-        }
-    </script>
-</body>
-</html>
+    <section class="py-12 px-4 relative overflow-hidden">
+        <div class="max-w-4xl mx-auto text-center space-y-4">
